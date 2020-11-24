@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Result
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 70px">
+    <h2>Results for '{{ query }}' :</h2>
+<table class="table">
+    <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year</th>
+    </tr>
+    {% for book in books %}
+        <tr>
+            <td scope="row"><a href="/books/{{ book.isbn }}">{{ book.isbn }}</a></td>
+            <td scope="row">{{ book.title }}</td>
+            <td scope="row">{{ book.author }}</td>
+            <td scope="row">{{ book.year }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+    </div>
+{% endblock %}

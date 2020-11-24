@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Add Review
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="margin-top: 70px">
+    <h2>Submit a Review</h2>
+        <br>
+    <form action="{{ url_for('review') }}" method="post">
+            <label>ISBN</label>
+    <div class="form-group">
+        <input type="text" name="isbn" placeholder="Book ISBN" class="form-control">
+    </div>
+        <label>Review</label>
+        <div class="form-group">
+        <textarea name="review" cols="30" rows="10" class="form-control" placeholder="Write a Review"></textarea>
+        </div>
+  <button type="submit" class="btn">Submit</button>
+    </form>
+    </div>
+{% endblock %}
